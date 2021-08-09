@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.sicoapp.movieapp.ui.login.signIn.SignInVM.FormErrors" />
+
+        <variable
+            name="data"
+            type="com.sicoapp.movieapp.ui.login.signIn.BindSignIn" />
+
+        <variable
+            name="viewModel"
+            type="com.sicoapp.movieapp.ui.login.signIn.SignInVM" />
+
+        <variable
+            name="image"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="50dp"
+        android:paddingStart="40dp"
+        android:paddingEnd="20dp"
+        android:background="@color/lightBlue"
+        tools:context=".ui.login.signIn.SignInFragment">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_email"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@color/white"
+            android:layout_width="325dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="50dp"
+            android:hint="please enter your email"
+            app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
+            app:errorText='@{viewModel.formErrors.contains(FormErrors.INVALID_EMAIL) ? "Required" : ""}'>
+
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="325dp"
+                android:layout_height="80dp"
+                android:inputType="textEmailAddress"
+                android:text="@{data.emailSignIn}"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="325dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="50dp"
+            android:background="@color/white"
+            android:hint="please enter your password"
+            app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
+            app:errorText='@{viewModel.formErrors.contains(FormErrors.INVALID_PASSWORD) ? "Required" : ""}'>
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="325dp"
+                android:layout_height="80dp"
+                android:inputType="textPassword"
+                android:text="@{data.passwordSignIn}"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout><!---->
+
+        <Button
+            android:id="@+id/btn_sign_in"
+            android:layout_width="325dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="172dp"
+            android:text="@string/sign_in"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.406"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "819949189121",
+    "project_id": "moviefirebase-967de",
+    "storage_bucket": "moviefirebase-967de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819949189121:android:be329ab4dfba1f67986800",
+        "android_client_info": {
+          "package_name": "com.sicoapp.movieapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819949189121-9d1h5c4fhhucqoe8ncpcvdvrd02ckgdr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBabk-vRJeVJsIVONlX4OljtBj3-ywNifw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819949189121-9d1h5c4fhhucqoe8ncpcvdvrd02ckgdr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

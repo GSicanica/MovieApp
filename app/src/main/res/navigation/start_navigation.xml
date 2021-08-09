@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/start_navigation"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.sicoapp.movieapp.ui.login.splash.SplashFragment"
+        android:label="Entry"
+        tools:layout="@layout/fragment_entry">
+        <action
+            android:id="@+id/action_splashFragment_to_introFragment"
+            app:destination="@id/introFragment"
+            />
+        <action
+            android:id="@+id/action_splashFragment_to_topMovieFragment"
+            app:destination="@id/topMovieFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/introFragment"
+        android:name="com.sicoapp.movieapp.ui.login.intro.IntroFragment"
+        android:label="Intro"
+        tools:layout="@layout/fragment_intro">
+        <action
+            android:id="@+id/action_introFragment_to_signInFragment"
+            app:destination="@id/signInFragment"/>
+        <action
+            android:id="@+id/action_introFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.sicoapp.movieapp.ui.login.signIn.SignInFragment"
+        android:label="Sign In"
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_signInFragment_to_topMovieFragment"
+            app:destination="@id/topMovieFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.sicoapp.movieapp.ui.login.signup.SignUpFragment"
+        android:label="Sign Up"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUpFragment_to_topMovieFragment"
+            app:destination="@id/topMovieFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/topMovieFragment"
+        android:name="com.sicoapp.movieapp.ui.topmovie.TopMovieFragment"
+        android:label="@string/topMovie"
+        app:defaultNavHost="true"
+        tools:layout="@layout/fragment_movie_top">
+
+        <action
+            android:id="@+id/action_movieListFragment_to_movieDetailsFragment"
+            app:destination="@id/movieDetailsFragment" />
+        <action
+            android:id="@+id/action_movieListFragment_to_crewMovieFragment"
+            app:destination="@id/crewMovieFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieDetailsFragment"
+        android:name="com.sicoapp.movieapp.ui.detail.DetailsMovieFragment"
+        android:label="@string/details"
+        tools:layout="@layout/fragment_movie_details" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/crewMovieFragment"
+        android:name="com.sicoapp.movieapp.ui.crew.CrewMovieFragment"
+        android:label="@string/crew"
+        tools:layout="@layout/fragment_movie_crew">
+    </fragment>
+    <fragment
+        android:id="@+id/popularMovieFragment"
+        android:name="com.sicoapp.movieapp.ui.popular.PopularMovieFragment"
+        android:label="@string/popular"
+        tools:layout="@layout/fragment_movie_popular">
+        <action
+            android:id="@+id/action_popularMovieFragment_to_movieDetailsFragment"
+            app:destination="@id/movieDetailsFragment" />
+        <action
+            android:id="@+id/action_popularMovieFragment_to_crewMovieFragment"
+            app:destination="@id/crewMovieFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.sicoapp.movieapp.ui.search.SearchFragment"
+        android:label="@string/search"
+        tools:layout="@layout/fragment_movie_search">
+        <action
+            android:id="@+id/action_searchFragment_to_movieDetailsFragment"
+            app:destination="@id/movieDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/savedFragment"
+        android:name="com.sicoapp.movieapp.ui.saved.SavedFragment"
+        android:label="Saved Movies"
+        tools:layout="@layout/fragment_saved_list" />
+
+    <fragment
+        android:id="@+id/myProfileFragment"
+        android:name="com.sicoapp.movieapp.ui.profil.MyProfileFragment"
+        android:label="My Profile" />
+
+</navigation>

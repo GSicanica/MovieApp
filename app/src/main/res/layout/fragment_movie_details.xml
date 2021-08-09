@@ -1,0 +1,165 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.sicoapp.movieapp.ui.detail.BindDetails" />
+        <variable
+            name="save"
+            type="com.sicoapp.movieapp.ui.detail.DetailsMovieFragment" />
+    </data>
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:context=".ui.detail.DetailsMovieFragment">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="20dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="20dp" />
+
+                <ImageView
+                    android:id="@+id/ivImage"
+                    android:layout_width="343dp"
+                    android:layout_height="292dp"
+                    android:layout_marginTop="70dp"
+                    android:contentDescription="@null"
+                    app:layout_constraintBottom_toTopOf="@+id/textOverview"
+                    app:layout_constraintDimensionRatio="16:9"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:loadImageDetails="@{data.imageUrl}"
+                    tools:src="@tools:sample/avatars" />
+
+                <com.hsalf.smileyrating.SmileyRating
+                    android:id="@+id/smiley"
+                    android:layout_width="395dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/popularity"
+                    app:layout_constraintVertical_bias="0.47" />
+
+                <TextView
+                    android:id="@+id/textOverview"
+                    style="@style/overview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/design_dark_default_color_primary"
+                    android:text="@string/overview"
+                    app:layout_constraintBottom_toTopOf="@+id/overviewTextView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivImage" />
+
+                <TextView
+                    android:id="@+id/overviewTextView"
+                    android:layout_width="375dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.overview}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivImage"
+                    app:layout_constraintVertical_bias="0.09"
+                    tools:text="abcdefgh" />
+
+                <TextView
+                    android:id="@+id/popularity_Text"
+                    style="@style/popularity_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:background="@color/design_default_color_secondary_variant"
+                    android:text="@string/popularity_text"
+                    app:layout_constraintEnd_toStartOf="@+id/release_date_Text"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/overviewTextView"
+                    tools:text="popularity" />
+
+                <TextView
+                    android:id="@+id/release_date_Text"
+                    style="@style/release_date_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:background="@color/design_default_color_secondary_variant"
+                    android:text="@string/release_date_Text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/popularity_Text"
+                    app:layout_constraintTop_toBottomOf="@+id/overviewTextView"
+                    tools:text="release_date" />
+
+                <TextView
+                    android:id="@+id/popularity"
+                    style="@style/popularity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@{data.popularity}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/release_date"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/popularity_Text"
+                    tools:text="abcdefgh" />
+
+                <TextView
+                    android:id="@+id/release_date"
+                    style="@style/releaseDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@{data.releaseDate}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/popularity"
+                    app:layout_constraintTop_toBottomOf="@+id/release_date_Text"
+                    tools:text="abcdefgh" />
+
+                <Button
+                    android:id="@+id/btnDeleteAll"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="156dp"
+                    android:text="delete"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/smiley"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/release_date"
+                    app:layout_constraintVertical_bias="0.741" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+</layout>
